@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+  	<bean name="employeeRepository"
+  	      class="com.naseeha.training.HibernateEmployeeRepositoryImpl"/>
+
+	<!-- Inject Member -->
+	<!-- <bean name="employeeService"
+	      class="com.naseeha.training.EmployeeServiceImpl">
+	 	<property name="employeeRepository" ref="employeeRepository"></property>     
+	 </bean>  	 -->
+	 
+	 <!-- Inject Constructor -->
+	 <!-- <bean name="employeeService"
+	      class="com.naseeha.training.EmployeeServiceImpl">
+	 	<constructor-arg index="0" ref="employeeRepository"></constructor-arg>     
+	 </bean>  --> 
+	 
+	  <!-- Autowire Constructor-->
+	 <!-- <bean name="employeeService"
+	      class="com.naseeha.training.EmployeeServiceImpl" autowire="constructor">    
+	 </bean>   -->	
+	 
+	   <!-- Autowire Setter-->
+	<!--  <bean name="employeeService"
+	      class="com.naseeha.training.EmployeeServiceImpl" autowire="byType">    
+	 </bean>  --> 
+
+ 	<!-- Autowire Name-->
+	 <bean name="employeeService"
+	      class="com.naseeha.training.EmployeeServiceImpl" autowire="byName">    
+	 </bean> 
+
+</beans>
+
+
+
+
+
